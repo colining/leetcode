@@ -96,7 +96,5 @@ public class MergeSort {
         while (rightStart <= right) {
             result[k++] = array[rightStart++];
         }
-
-
     }
 }
