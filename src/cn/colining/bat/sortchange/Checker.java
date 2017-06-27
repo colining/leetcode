@@ -1,4 +1,4 @@
-package cn.colining.bat.sort;
+package cn.colining.bat.sortchange;
 
 import java.util.Arrays;
 
@@ -7,23 +7,32 @@ import static cn.colining.myjar.Swap.swap;
 /**
  * Created by colin on 2017/6/27.
  */
-public class HeapSort {
+public class Checker {
+    /** 题目
+     * 请设计一个高效算法，判断数组中是否有重复值。必须保证额外空间复杂度为O(1)。
+     给定一个int数组A及它的大小n，请返回它是否有重复值。
+     * @param args
+     */
     public static void main(String[] args) {
-        int[] array = new int[]{14, 4, 14};
-        HeapSort heapSort = new HeapSort();
-        heapSort.heapSort(array, array.length);
-        System.out.println(Arrays.toString(array));
+        int[] array = new int[]{1, 2, 3, 4, 5, 6};
+        System.out.println(checkDuplicate(array, array.length));
     }
 
     /**
-     * 堆排思路，利用大根堆头结点最大的特性<br>
-     * 首先将数组调换为大根堆，然后把头结点扔出去<br>
-     * 重复这个过程
-     *
+     * 因为堆排序是就地排序，所以空间复杂度可以认为是O(1)
      * @param array
      * @param n
      * @return
      */
+    public static boolean checkDuplicate(int[] array, int n) {
+        heapSort(array, n);
+        for (int i = 0; i < array.length-1; i++) {
+            if (array[i]==array[i+1])
+                return true;
+        }
+        return false;
+    }
+
     public static int[] heapSort(int[] array, int n) {
         array = buildMaxHeap(array, n);
         for (int i = array.length - 1; i > 0; i--) {
@@ -34,10 +43,6 @@ public class HeapSort {
     }
 
     private static int[] buildMaxHeap(int[] array, int n) {
-        //这个边界坑坏我了，数组长度是从一开始计算的；
-        //直接除以二就行了,其实k的起始边界并不重要；
-        //很可能第一次压根就不会进行调换，实际上因为数组从零开始，
-        // 所以有时会多一次调换
         for (int k = array.length >> 1; k >= 0; k--) {
             adjustHeap(array, k, array.length);
         }
@@ -58,5 +63,11 @@ public class HeapSort {
             }
         }
         array[k] = temp;
+    }
+
+    public static void swap(int[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
 }
