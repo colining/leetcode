@@ -1,4 +1,4 @@
-package cn.colining.bat.sortchange2;
+package cn.colining.bat.sort.sortchange2;
 
 /**
  * Created by colin on 2017/6/30.

@@ -1,4 +1,4 @@
-package cn.colining.bat.sortchange;
+package cn.colining.bat.sort.sortchange;
 
 import java.util.Arrays;
 

@@ -1,6 +1,4 @@
-package cn.colining.bat.sortchange;
-
-import cn.colining.myjar.Swap;
+package cn.colining.bat.sort.sortchange;
 
 import java.util.Arrays;
 

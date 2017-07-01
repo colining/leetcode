@@ -1,4 +1,4 @@
-package cn.colining.bat.sort;
+package cn.colining.bat.sort.classicsort;
 
 /**
  * Created by colin on 2017/6/27.

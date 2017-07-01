@@ -1,6 +1,4 @@
-package cn.colining.bat.sort;
-
-import sun.plugin.javascript.navig.Array;
+package cn.colining.bat.sort.classicsort;
 
 import java.util.Arrays;
 
