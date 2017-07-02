@@ -10,7 +10,7 @@ import static cn.colining.myjar.Swap.swap;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] array = new int[]{5, 2, 4, 6, 3, 21, 5, 8};
+        int[] array = new int[]{5, 2, 4, 6, 8,4};
         quickSort(array, array.length);
         System.out.println(Arrays.toString(array));
     }
@@ -31,7 +31,7 @@ public class QuickSort {
      */
     private static int[] quick(int[] a, int left, int right) {
         if (left < right) {
-            int sentry = sort1(a, left, right);
+            int sentry = sort3(a, left, right);
             quick(a, left, sentry - 1);
             quick(a, sentry + 1, right);
         }
@@ -96,6 +96,9 @@ public class QuickSort {
     private static int sort3(int[] array, int left, int right) {
         int pivot = left - 1;
         int index = left;
+        //这里注意index可以==right，这样的话扫描到最后
+        //就可以将sentry也放到值小的区域；这样哨兵就到了正确位置，
+        //左边比它小，右边比它大
         while (index <= right) {
             if (array[index] <= array[right]) {
                 swap(array, ++pivot, index);
