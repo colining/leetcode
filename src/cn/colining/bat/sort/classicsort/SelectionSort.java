@@ -33,9 +33,7 @@ public class SelectionSort {
                     index = j;
                 }
             }
-
             swap(A, index, A.length - 1 - i);
-
 
         }
         return A;
