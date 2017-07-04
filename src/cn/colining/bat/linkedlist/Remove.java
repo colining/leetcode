@@ -6,7 +6,7 @@ package cn.colining.bat.linkedlist;
 public class Remove {
     /**
      * 实现一个算法，删除单向链表中间的某个结点，假定你只能访问该结点。
-     * 给定带删除的头节点和要删除的数字，请执行删除操作，返回删除后的头结点。链表中没有重复数字
+     * 给定带删除的头结点和要删除的数字，请执行删除操作，返回删除后的头结点。链表中没有重复数字
      *
      * @param args
      */
@@ -34,13 +34,13 @@ public class Remove {
         ListNode node = pNode;
         ListNode temp = pNode;
         while (node != null) {
-            //这里就是复制后一个节点，然后删除后一个节点的做法
+            //这里就是复制后一个结点，然后删除后一个结点的做法
             if (node.val == delVal && node.next != null) {
                 node.val = node.next.val;
                 node.next = node.next.next;
                 break;
             }
-            //然而到尾节点还是不灵光的啦，一定需要前节点
+            //然而到尾结点还是不灵光的啦，一定需要前结点
             else if (node.val == delVal && node.next == null) {
                 temp.next = null;
                 break;

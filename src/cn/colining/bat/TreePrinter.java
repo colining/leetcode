@@ -23,9 +23,9 @@ public class TreePrinter {
 
     /**
      * 解法重点是last 和nlast两个指针<br>
-     * last是本行最右节点位置，当当前节点==last 换行<br>
-     * nlast 是用来指向下一行的最右节点，当换行的时候将其赋给last<br>
-     * nlast每次指向加入队列的新节点，最后就可以得到最有节点是哪个了；
+     * last是本行最右结点位置，当当前结点==last 换行<br>
+     * nlast 是用来指向下一行的最右结点，当换行的时候将其赋给last<br>
+     * nlast每次指向加入队列的新结点，最后就可以得到最有结点是哪个了；
      * @param root
      * @return
      */
