@@ -13,6 +13,7 @@ public class LexicographicalCode {
      * 其中a的Index为0，aa的Index为1，aaa的Index为2，
      * 以此类推。 编写一个函数，输入是任意一个编码，
      * 输出这个编码对应的Index.
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -23,7 +24,13 @@ public class LexicographicalCode {
 
     /**
      * 思路：排列组合的思想<br>
-     *
+     * a和b之间 有25+25*25+25*25*25个数  (25:aa,ab……ay),<br>
+     * (25*25: aaa,aab……aba……ayy);(25*25*25: aaaa,……ayyyy)<br>
+     * 所以b的位置是 a+ 25+25*25+25*25*25+1<br>
+     * 以此类推：ab = aa +25+25*25 +1 <br>
+     * aab = aaa + 25 + 1<br>
+     * aaab + aaaa + 1;<br>
+     * 然后索引从a, aa,aaa开始 0,1,2，可以认为是长度-1<br>
      * @param code
      * @return
      */
@@ -42,7 +49,7 @@ public class LexicographicalCode {
     public static String deCode(int index) {
         int factor[] = {1 + 25 + 25 * 25 + 25 * 25 * 25, 1 + 25 + 25 * 25, 1 + 25, 1};
         StringBuilder stringBuilder = new StringBuilder();
-        int i=0;
+        int i = 0;
         while (index > 0) {
             stringBuilder.append((char) ('a' + index / factor[i]));
             index %= factor[i++];

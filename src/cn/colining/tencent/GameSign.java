@@ -37,8 +37,9 @@ public class GameSign {
     }
 
     /**
-     * 通过对32的倍数，和求余，即可将1024个信息隐藏在<br>
-     * 32个数。每个数32位，即：32*32 个1中；
+     * 首先我们得知道无符号整数位数32位，32*32 = 1024；<br>
+     * 所以我们要做的就是将0,1，存在着1024中；由于数组从零开始<br>
+     * 所以我们除以32，找到该任务要储存在哪个32中；然后再求余<br>
      * @param i
      * @param j
      * @return
@@ -50,8 +51,6 @@ public class GameSign {
         int indexb1 = (j - 1) / 32;
         int indexb2 = j % 32 == 0 ? 32 : j % 32;
 
-        int num1 = map[indexa1];
-        int num2 = map[indexb1];
         map[indexa1] |= 1<<(32 - indexa2);
         return map[indexb1] & 1<<(32 - indexb2);
 
