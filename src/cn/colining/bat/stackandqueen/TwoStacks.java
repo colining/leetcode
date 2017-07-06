@@ -33,6 +33,12 @@ public class TwoStacks {
         return  arrayList;
     }
 
+    /**
+     * 将栈中元素压入辅助栈，如果小的话，直接压入，否则就先将辅助栈中元素弹出，
+     * 然后压入
+     * @param stack
+     * @param helpStack
+     */
     private static void sortStack(Stack<Integer> stack, Stack<Integer> helpStack) {
         while (!stack.empty()) {
             if (helpStack.empty() || stack.peek() < helpStack.peek()) {
