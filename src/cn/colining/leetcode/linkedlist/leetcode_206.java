@@ -6,6 +6,10 @@ import cn.colining.myjar.ListNode;
  * Created by colin on 2017/7/11.
  */
 public class leetcode_206 {
+    /**
+     * Reverse a singly linked list.
+     * @param args
+     */
     public static void main(String[] args) {
         ListNode node = ListNode.buildListNode(new int[]{1, 2, 3, 4, 5, 6});
         reverseList1(node);

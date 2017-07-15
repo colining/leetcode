@@ -20,7 +20,7 @@ public class leetcode_142 {
     public ListNode detectCycle(ListNode head) {
         ListNode quick = head;
         ListNode slow = head;
-
+        //找到快慢指针的相交点
         while (quick != null && quick.next != null) {
             quick = quick.next.next;
             slow = slow.next;
@@ -31,6 +31,7 @@ public class leetcode_142 {
         }
         if(quick == null||quick.next ==null)
             return null;
+        //快慢指针一步一步走，会在环的起始位置相遇
         while (quick != slow) {
             quick = quick.next;
             slow = slow.next;

@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * Created by colin on 2017/7/11.
  */
-public class leetcode_139 {
+public class leetcode_131 {
     public static void main(String[] args) {
-        leetcode_139 leetcode_139 = new leetcode_139();
-        leetcode_139.partition("aa");
+        leetcode_131 leetcode_131 = new leetcode_131();
+        leetcode_131.partition("aabbcc");
     }
     List<List<String>> resultList;
     ArrayList<String> currList;

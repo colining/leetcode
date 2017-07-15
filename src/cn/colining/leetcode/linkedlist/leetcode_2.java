@@ -35,7 +35,7 @@ public class leetcode_2 {
     public static ListNode addTwoNumbers(ListNode node1, ListNode node2) {
         ListNode head = new ListNode(0);
         ListNode headCopy = head;
-        ListNode node = null;
+        ListNode node ;
         ListNode temp = null;
         int sum = 0;
         while (!(node1 == null && node2 == null)) {

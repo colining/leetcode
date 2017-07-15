@@ -101,7 +101,6 @@ public class leetcode_143 {
             curNode.next = pre;
             node = curNode;
             curNode = temp;
-
             temp = pre.next;
             pre.next = curNode;
             pre = temp;

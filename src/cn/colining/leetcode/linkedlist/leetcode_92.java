@@ -44,7 +44,7 @@ public class leetcode_92 {
         ListNode start = pre.next;
         ListNode then = start.next;
 
-        //通过每次从后往前调换位置，即可是部分逆序
+        //通过每次从后往前调换位置，即可部分逆序
         for (int i = 0; i < n-m; i++) {
             start.next = then.next;
             then.next = pre.next;
