@@ -14,7 +14,7 @@ public class leetcode_83 {
      */
     public static void main(String[] args) {
         ListNode node = ListNode.buildListNode(new int[]{1, 1, 2, 2, 3, 4});
-        deleteDuplicates1(node);
+        deleteDuplicates(node);
     }
 
     public static ListNode deleteDuplicates(ListNode head) {
@@ -42,11 +42,12 @@ public class leetcode_83 {
      */
     public static ListNode deleteDuplicates1(ListNode head) {
         ListNode curNode = head;
-        while (curNode != null) {
-            while (curNode.next != null && curNode.val == curNode.next.val) {
+        while (curNode != null && curNode.next != null) {
+            if (curNode.val == curNode.next.val) {
                 curNode.next = curNode.next.next;
+            }else {
+                curNode = curNode.next;
             }
-            curNode = curNode.next;
         }
         return head;
     }
