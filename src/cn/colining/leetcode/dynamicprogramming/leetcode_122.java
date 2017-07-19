@@ -21,7 +21,6 @@ public class leetcode_122 {
             if (temp > 0) {
                 sum += temp;
             }
-
         }
         return sum;
     }

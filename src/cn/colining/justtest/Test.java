@@ -8,30 +8,20 @@ import java.util.Vector;
  */
 public class Test {
     public static void main(String[] args) {
-//        System.out.println(~5);
-//        int a = 5;
-//        System.out.println(Integer.toBinaryString(5));
-//        System.out.println(Integer.toBinaryString(~5));
-//
-//
-//        int b = 3;
-//        System.out.println(Integer.toBinaryString(1 << (b + 1)));
-//        System.out.println(Integer.toBinaryString((1 << (b + 1))-1));
-//        System.out.println(Integer.toBinaryString(~((1 << (b + 1))-1)));
-//
-//        int c = 123;
-//        int d = 789;
-//        System.out.println(Integer.toBinaryString(c));
-//        System.out.println(Integer.toBinaryString(d));
-//
-//        System.out.println(Integer.toBinaryString(c & (~d)));
-
-        Byte a = 4;
-        a++;
-        add(a);
-        System.out.println(a);
+        Object a = "123";
+        int str = 123;
+        Object b = str;
+        Object c = new Object();
+        c = "123";
+        System.out.println(b == c);
+        System.out.println(a == b);
     }
-    private static void add(Byte a) {
-        a++;
+
+
+
+}
+class B {
+
+    public B() {
     }
 }

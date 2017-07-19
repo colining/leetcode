@@ -9,7 +9,7 @@ import static cn.colining.myjar.Swap.swap;
  */
 public class HeapSort {
     public static void main(String[] args) {
-        int[] array = new int[]{14, 4, 14};
+        int[] array = new int[]{5,5,5};
         HeapSort heapSort = new HeapSort();
         heapSort.heapSort(array, array.length);
         System.out.println(Arrays.toString(array));
