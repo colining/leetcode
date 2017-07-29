@@ -4,14 +4,23 @@ package cn.colining.leetcode.dynamicprogramming;
  * Created by colin on 2017/7/13.
  */
 public class leetcode_123 {
+    /*
+    Say you have an array for which the ith element is the price of a given stock on day i.
+
+    Design an algorithm to find the maximum profit. You may complete at most two transactions.
+
+    Note:
+    You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+     */
     public static void main(String[] args) {
-        int[] array = new int[]{2,5,1,8};
-        System.out.println(maxProfit1(array));
+        int[] array = new int[]{7,1,5,3,6,4};
+        System.out.println(maxProfit2(array));
     }
 
     /**
      * 自己写的基于最大字段和的解法，后面其实是暴力搜索，无法通过，
      * 向后继续思考的话，就可以改造成下面的方法
+     *
      * @param prices
      * @return
      */
@@ -24,9 +33,9 @@ public class leetcode_123 {
             array[i] = prices[i + 1] - prices[i];
         }
         int max = 0;
-        int sum = 0;
+        int sum;
         if (array.length == 1) {
-            return Math.max(array[0],0);
+            return Math.max(array[0], 0);
         }
         for (int i = 1; i < array.length; i++) {
             sum = 0;
@@ -57,6 +66,7 @@ public class leetcode_123 {
      * 取决于第二次买入有多少钱；
      * 而第第二次买入取决于第一次卖出是多少钱，
      * 第一次卖出取决于第一次买入；
+     *
      * @param prices
      * @return
      */
@@ -73,35 +83,47 @@ public class leetcode_123 {
         }
         return release2;
     }
+
     /**
      * 从左向右计算当前能获取的最大收益；这个就是第一次的收益
-     * 然后从又向前计算当前能获得的最大收益；这个是第二次的收益
+     * 然后从后向前计算当前能获得的最大收益；这个是第二次的收益
+     *
      * @param prices
      * @return
      */
     public static int maxProfit2(int[] prices) {
         if (prices == null || prices.length == 0) return 0;
-        int lenght = prices.length;
+        int length = prices.length;
 
-        int[] leftProfit = new int[lenght];
+        int[] leftProfit = new int[length];
         int leftMaxProfit = 0;
         int leftMin = prices[0];
-        for (int i=0; i<lenght; i++) {
-            if (prices[i] < leftMin) leftMin = prices[i];
-            if (prices[i] - leftMin > leftMaxProfit) leftMaxProfit = prices[i]-leftMin;
+        for (int i = 0; i < length; i++) {
+            if (prices[i] < leftMin)
+                leftMin = prices[i];
+            if (prices[i] - leftMin > leftMaxProfit)
+                leftMaxProfit = prices[i] - leftMin;
             leftProfit[i] = leftMaxProfit;
         }
 
         int maxProfit = 0;
         int rightMaxProfit = 0;
-        int rightMax = prices[lenght-1];
-        for (int i=lenght-1; i>=0; i--) {
-            if (prices[i] > rightMax) rightMax = prices[i];
-            if (rightMax - prices[i] > rightMaxProfit) rightMaxProfit = rightMax - prices[i];
-            int currentProfit = rightMaxProfit + (i>0 ? leftProfit[i-1] : 0);
+        int rightMax = prices[length - 1];
+        //
+        int[] right = new int[length];
+        //
+        for (int i = length - 1; i >= 0; i--) {
+            if (prices[i] > rightMax)
+                rightMax = prices[i];
+            if (rightMax - prices[i] > rightMaxProfit) {
+                rightMaxProfit = rightMax - prices[i];
+
+            }
+            int currentProfit = rightMaxProfit + (i > 0 ? leftProfit[i - 1] : 0);
             if (currentProfit > maxProfit) {
                 maxProfit = currentProfit;
             }
+            right[--length] = rightMaxProfit;
         }
         return maxProfit;
     }

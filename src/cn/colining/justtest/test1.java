@@ -1,7 +1,5 @@
 package cn.colining.justtest;
 
-import java.util.jar.JarEntry;
-
 /**
  * Created by colin on 2017/7/19.
  */

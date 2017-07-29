@@ -3,7 +3,7 @@ package cn.colining.leetcode.dynamicprogramming;
 /**
  * Created by colin on 2017/7/13.
  */
-public class leetcode_181 {
+public class leetcode_188 {
     /**
      * 一会儿再说
      * @param args
@@ -32,7 +32,8 @@ public class leetcode_181 {
         int len = prices.length, profit = 0;
         for (int i = 1; i < len; i++)
             // as long as there is a price gap, we gain a profit.
-            if (prices[i] > prices[i - 1]) profit += prices[i] - prices[i - 1];
+            if (prices[i] > prices[i - 1])
+                profit += prices[i] - prices[i - 1];
         return profit;
     }
 }
