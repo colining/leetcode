@@ -7,8 +7,8 @@ import java.util.Arrays;
  */
 public class DPTest {
     public static void main(String[] args) {
-//        int n = 1;
-//        System.out.println(func(n));
+        int n = 51;
+        System.out.println(func(n));
 //        int[] array = new int[]{5, 1, 2, 10, 6, 2};
 //        System.out.println(func2(array));
 
