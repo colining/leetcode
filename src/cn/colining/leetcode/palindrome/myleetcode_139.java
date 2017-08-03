@@ -27,7 +27,7 @@ public class myleetcode_139 {
 
     /*
     主要思路是回溯：
-    leetcode 大神代码，还有配图，我就改成了ArrayList
+    leetcode_647 大神代码，还有配图，我就改成了ArrayList
     https://leetcode.com/problems/palindrome-partitioning/#/solutions
 
      */

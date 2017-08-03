@@ -10,7 +10,6 @@ public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         int[] array = new int[]{1,3,5,7,9};
         System.out.println(Arrays.binarySearch(array, 0, 3, 5));
-
     }
     public int getLIS(int[] A, int n) {
         if (A == null || A.length == 0) {
