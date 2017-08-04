@@ -4,6 +4,11 @@ package cn.colining.justtest;
  * Created by colin on 2017/7/19.
  */
 public class test1 {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = ++a;
+        System.out.println(a/6.0);
+    }
     public static int win1(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;

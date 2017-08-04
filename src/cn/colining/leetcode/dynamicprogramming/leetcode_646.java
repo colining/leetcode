@@ -6,6 +6,9 @@ import java.util.Arrays;
  * Created by colin on 2017/7/29.
  */
 public class leetcode_646 {
+    /*
+    寻找最长的链表
+     */
     public static void main(String[] args) {
         int[][] array = new int[][]{{1, 100000000}, {3, 500}, {501, 505}, {3, 501}, {1001, 10002}, {4, 5}, {100000, 1000000}};
         System.out.println(findLongestChain2(array));
