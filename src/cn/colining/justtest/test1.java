@@ -8,6 +8,7 @@ public class test1 {
         int a = 1;
         int b = ++a;
         System.out.println(a/6.0);
+        System.out.println(null == null);
     }
     public static int win1(int[] arr) {
         if (arr == null || arr.length == 0) {
