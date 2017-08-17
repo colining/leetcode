@@ -10,8 +10,34 @@ public class leetcode_84 {
      * https://leetcode.com/problems/largest-rectangle-in-histogram/#/description
      */
     public static void main(String[] args) {
-        int[] array = new int[]{2,1,5,6,2,3};
-        System.out.println(largestRectangleArea2(array));
+        int[] array = new int[]{100};
+        System.out.println(largestRectangleArea(array));
+//        System.out.println(singleStack(array));
+    }
+
+    private static int singleStack(int[] array) {
+        if (array == null || array.length == 0) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<>();
+        int max = Integer.MIN_VALUE;
+        int cur;
+        for (int i = 0; i < array.length; i++) {
+                while (!stack.isEmpty() && array[stack.peek()] >= array[i]) {
+                    int k = stack.pop();
+                    int j = stack.isEmpty() ? -1 : stack.peek();
+                    cur = array[k] * (i - j - 1);
+                    max = Math.max(cur, max);
+                }
+                stack.push(i);
+        }
+        while (!stack.isEmpty()) {
+            int j = stack.pop();
+            int k = stack.isEmpty() ? -1 : stack.peek();
+            cur = array[j] * (array.length - k - 1);
+            max = Math.max(max, cur);
+        }
+        return max;
     }
 
     /**
@@ -27,9 +53,12 @@ public class leetcode_84 {
         int length = array.length;
         for (int i = 0; i <= length; i++) {
             int h = (i == length) ? 0 : array[i];
+            //如果当前值比前一个高，说明还可以继续扩展
             if (stack.isEmpty() || h >=array[stack.peek()]) {
                 stack.push(i);
-            }else {
+            }
+            //否则的话
+            else {
                 int tp = stack.pop();
                 result = Math.max(result, array[tp] * (stack.isEmpty()?i: i - 1 - stack.peek()));
                 i--;
