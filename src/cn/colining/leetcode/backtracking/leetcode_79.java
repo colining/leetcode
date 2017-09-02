@@ -16,7 +16,7 @@ public class leetcode_79 {
     Given board =
 
     [
-      ['A','B','C','E'],
+      ['A','inter','C','E'],
       ['S','F','C','S'],
       ['A','D','E','E']
     ]

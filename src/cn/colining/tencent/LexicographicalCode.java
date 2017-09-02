@@ -25,7 +25,7 @@ public class LexicographicalCode {
     /**
      * 思路：排列组合的思想<br>
      * a和b之间 有25+25*25+25*25*25个数  (25:aa,ab……ay),<br>
-     * (25*25: aaa,aab……aba……ayy);(25*25*25: aaaa,……ayyyy)<br>
+     * (25*25: aaa,aab……aba……ayy);(25*25*25: aaaa,……ayyy)<br>
      * 所以b的位置是 a+ 25+25*25+25*25*25+1<br>
      * 以此类推：ab = aa +25+25*25 +1 <br>
      * aab = aaa + 25 + 1<br>
