@@ -16,14 +16,11 @@ public class leetcode_23 {
         if (lists == null || lists.length == 0) {
             return null;
         }
-        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
-            @Override
-            public int compare(ListNode o1, ListNode o2) {
-                if (o1.val == o2.val) {
-                    return 0;
-                }
-                return o1.val > o2.val ? 1 : -1;
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, (o1, o2) -> {
+            if (o1.val == o2.val) {
+                return 0;
             }
+            return o1.val > o2.val ? 1 : -1;
         });
         ListNode dummy = new ListNode(0);
         ListNode tail=dummy;

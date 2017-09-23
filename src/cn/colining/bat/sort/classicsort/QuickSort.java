@@ -90,7 +90,6 @@ public class QuickSort {
                 index++;
         }
         return indexOfMin + 1;
-
     }
 
     private static int sort3(int[] array, int left, int right) {
